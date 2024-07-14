@@ -427,7 +427,6 @@ n= 4
 #     @classmethod  # with this output will be "my name is basu kallapur studying in BMS College of Engineering." and without this the college name will be change do RVCE Bengaluru
 #     def show(cls):
 #         print(f"my name is basu kallapur studying in {cls.college}.")
-
 # a= student()
 # a.college= "RVCE Bengaluru"
 # a.show()
