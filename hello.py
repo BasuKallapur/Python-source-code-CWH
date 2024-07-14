@@ -408,19 +408,16 @@ n= 4
 #     company= "Microsoft"
 #     def __init__(self):
 #         print("constructor of employee1")
-        
 # class employe2(employe1):
 #     post= "manager"
 #     def __init__(self):
 #         # super().__init__() 
 #         print("constructor of employee2")
-
 # class child(employe2):
 #     salary= 120000
 #     def __init__(self):
 #         super().__init__()   #used to make to run constructor of this previous parent also , which is employee2 or super() method is used to access the methods of a super class in the derived class. 
 #         print("constructor of child")
-
 # a= child()
 # print(a.company,a.post,a.salary)
 
