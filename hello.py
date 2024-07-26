@@ -311,7 +311,7 @@ n= 4
 #         self.college= college
 #         self.year= year
 #         print("printed using dunder method")
-#     @staticmethod
+#     @staticmethod   #Sometimes we need a function that does not use the self-parameter. We can define a static method like this:
 #     def greet ():
 #         print(f"good morning")
 # basu= students("basuck","bmsce",1)
@@ -403,46 +403,46 @@ n= 4
 # c.show()
 
 
-# # #2. Multilevel inheritance
-# class employe1:
-#     company= "Microsoft"
-#     def __init__(self):
-#         print("constructor of employee1")
-# class employe2(employe1):
-#     post= "manager"
-#     def __init__(self):
-#         # super().__init__() 
-#         print("constructor of employee2")
-# class child(employe2):
-#     salary= 120000
-#     def __init__(self):
-#         super().__init__()   #used to make to run constructor of this previous parent also , which is employee2 or super() method is used to access the methods of a super class in the derived class. 
-#         print("constructor of child")
-# a= child()
-# print(a.company,a.post,a.salary)
+# #2. Multilevel inheritance
+class employe1:
+    company= "Microsoft"
+    def __init__(self):
+        print("constructor of employee1")
+class employe2(employe1):
+    post= "manager"
+    def __init__(self):
+        # super().__init__() 
+        print("constructor of employee2")
+class child(employe2):
+    salary= 120000
+    def __init__(self):
+        super().__init__()   #used to make to run constructor of this previous parent also , which is employee2 or super() method is used to access the methods of a super class in the derived class. 
+        print("constructor of child")
+a= child()
+print(a.company,a.post,a.salary)
 
-# # #class methods
-# class student:
-#     college= "BMS College of Engineering"
-#     @classmethod  # with this output will be "my name is basu kallapur studying in BMS College of Engineering." and without this the college name will be change do RVCE Bengaluru
-#     def show(cls):
-#         print(f"my name is basu kallapur studying in {cls.college}.")
-# a= student()
-# a.college= "RVCE Bengaluru"
-# a.show()
+# #class methods
+class student:
+    college= "BMS College of Engineering"
+    @classmethod  # with this output will be "my name is basu kallapur studying in BMS College of Engineering." and without this the college name will be change do RVCE Bengaluru
+    def show(cls):
+        print(f"my name is basu kallapur studying in {cls.college}.")
+a= student()
+a.college= "RVCE Bengaluru"
+a.show()
 
 
 # #Property decorators
 
 
 
-# #operator overloading
-class Number:
-    def __init__(self,n):
-        self.n= n
-    def __add__(self,num):
-        return self.n + num.n
-n= Number(1)
-m= Number(2)
-print(n+m)
+# # #operator overloading
+# class Number:
+#     def __init__(self,n):
+#         self.n= n
+#     def __add__(self,num):
+#         return self.n + num.n
+# n= Number(1)
+# m= Number(2)
+# print(n+m)
 
