@@ -37,10 +37,10 @@
 #     fact*=i
 # print(f"factoraial of  {inp} is: {fact}")
 
-from wsgiref.simple_server import software_version
+# from wsgiref.simple_server import software_version
 
 
-n= 4
+# n= 4
 # for i in range (n):
 #     print("*"*(i+1))
 
@@ -198,6 +198,21 @@ n= 4
 # # with statement , it is used to do the the same work without close
 # with open("newFile.txt") as f:
 #     print(f.read())
+
+# # mapping combined example
+# hex_map = "0123456789ABCDEF"
+
+# # Accessing an element using index
+# remainder = 15
+# hex_char = hex_map[remainder]
+# print(f"Character at index {remainder} is {hex_char}")  # Output: 'F'
+
+# # Finding the index of an element
+# char = 'C'
+# index = hex_map.index(char)
+# print(f"Index of character '{char}' is {index}")  # Output: 12
+
+
 
 # # practice set question
 # with open("file.txt",'r') as f:
@@ -403,33 +418,34 @@ n= 4
 # c.show()
 
 
-# #2. Multilevel inheritance
+#2. Multilevel inheritance
 class employe1:
     company= "Microsoft"
     def __init__(self):
         print("constructor of employee1")
 class employe2(employe1):
     post= "manager"
+    salary= 12000069
     def __init__(self):
         # super().__init__() 
         print("constructor of employee2")
 class child(employe2):
-    salary= 120000
+    
     def __init__(self):
         super().__init__()   #used to make to run constructor of this previous parent also , which is employee2 or super() method is used to access the methods of a super class in the derived class. 
         print("constructor of child")
 a= child()
 print(a.company,a.post,a.salary)
 
-# #class methods
-class student:
-    college= "BMS College of Engineering"
-    @classmethod  # with this output will be "my name is basu kallapur studying in BMS College of Engineering." and without this the college name will be change do RVCE Bengaluru
-    def show(cls):
-        print(f"my name is basu kallapur studying in {cls.college}.")
-a= student()
-a.college= "RVCE Bengaluru"
-a.show()
+# # #class methods
+# class student:
+#     college= "BMS College of Engineering"
+#     @classmethod  # with this output will be "my name is basu kallapur studying in BMS College of Engineering." and without this the college name will be change do RVCE Bengaluru
+#     def show(cls):
+#         print(f"my name is basu kallapur studying in {cls.college}.")
+# a= student()
+# a.college= "RVCE Bengaluru"
+# a.show()
 
 
 # #Property decorators
