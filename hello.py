@@ -418,38 +418,56 @@
 # c.show()
 
 
-#2. Multilevel inheritance
-class employe1:
-    company= "Microsoft"
-    def __init__(self):
-        print("constructor of employee1")
-class employe2(employe1):
-    post= "manager"
-    salary= 12000069
-    def __init__(self):
-        # super().__init__() 
-        print("constructor of employee2")
-class child(employe2):
+# #2. Multilevel inheritance
+# class employe1:
+#     company= "Microsoft"
+#     def __init__(self):
+#         print("constructor of employee1")
+# class employe2(employe1):
+#     post= "manager"
+#     salary= 120000
+#     def __init__(self):
+#         # super().__init__() 
+#         print("constructor of employee2")
+# class child(employe2):
     
-    def __init__(self):
-        super().__init__()   #used to make to run constructor of this previous parent also , which is employee2 or super() method is used to access the methods of a super class in the derived class. 
-        print("constructor of child")
-a= child()
-print(a.company,a.post,a.salary)
+#     def __init__(self):
+#         # super().__init__()   #used to make to run constructor of this previous parent also , which is employee2 or super() method is used to access the methods of a super class in the derived class. 
+#         print("constructor of child")
+# a= child()
+# print(a.company,a.post,a.salary)
 
 # # #class methods
 # class student:
 #     college= "BMS College of Engineering"
-#     @classmethod  # with this output will be "my name is basu kallapur studying in BMS College of Engineering." and without this the college name will be change do RVCE Bengaluru
+#     # @classmethod  # with this output will be "my name is basu kallapur studying in BMS College of Engineering." and without this the college name will be change do RVCE Bengaluru
 #     def show(cls):
 #         print(f"my name is basu kallapur studying in {cls.college}.")
 # a= student()
 # a.college= "RVCE Bengaluru"
+# a.college= "RVCE dfs"
 # a.show()
 
 
-# #Property decorators
+# #Property decorators  #abstraction and incapsulation
+# class student:
+#     college= "BMS College of Engineering"
+#     @classmethod 
+#     def show(cls):
+#         print(f"my name is basu kallapur studying in {cls.college}.")
+#     @property
+#     def name(self):
+#         return f"{self.fname} {self.lname}"
+#     @name.setter
+#     def name(self,value):
+#         self.fname= value.split(" ")[0]
+#         self.lname= value.split(" ")[1]
 
+# a= student()
+# a.college= "RVCE Bengaluru"
+# a.name= "basu kallapur"  #after this we wan't our property to be set
+# print(a.name)
+# a.show()
 
 
 # # #operator overloading
@@ -457,8 +475,10 @@ print(a.company,a.post,a.salary)
 #     def __init__(self,n):
 #         self.n= n
 #     def __add__(self,num):
-#         return self.n + num.n
-# n= Number(1)
+#         return self.n * num.n
+# n= Number(2)
 # m= Number(2)
 # print(n+m)
+
+
 
