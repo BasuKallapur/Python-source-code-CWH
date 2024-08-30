@@ -37,10 +37,10 @@
 #     fact*=i
 # print(f"factoraial of  {inp} is: {fact}")
 
-from wsgiref.simple_server import software_version
+# from wsgiref.simple_server import software_version
 
 
-n= 4
+# n= 4
 # for i in range (n):
 #     print("*"*(i+1))
 
@@ -199,6 +199,21 @@ n= 4
 # with open("newFile.txt") as f:
 #     print(f.read())
 
+# # mapping combined example
+# hex_map = "0123456789ABCDEF"
+
+# # Accessing an element using index
+# remainder = 15
+# hex_char = hex_map[remainder]
+# print(f"Character at index {remainder} is {hex_char}")  # Output: 'F'
+
+# # Finding the index of an element
+# char = 'C'
+# index = hex_map.index(char)
+# print(f"Index of character '{char}' is {index}")  # Output: 12
+
+
+
 # # practice set question
 # with open("file.txt",'r') as f:
 #     lines= f.read()
@@ -311,7 +326,7 @@ n= 4
 #         self.college= college
 #         self.year= year
 #         print("printed using dunder method")
-#     @staticmethod
+#     @staticmethod   #Sometimes we need a function that does not use the self-parameter. We can define a static method like this:
 #     def greet ():
 #         print(f"good morning")
 # basu= students("basuck","bmsce",1)
@@ -403,20 +418,21 @@ n= 4
 # c.show()
 
 
-# # #2. Multilevel inheritance
+# #2. Multilevel inheritance
 # class employe1:
 #     company= "Microsoft"
 #     def __init__(self):
 #         print("constructor of employee1")
 # class employe2(employe1):
 #     post= "manager"
+#     salary= 120000
 #     def __init__(self):
 #         # super().__init__() 
 #         print("constructor of employee2")
 # class child(employe2):
-#     salary= 120000
+    
 #     def __init__(self):
-#         super().__init__()   #used to make to run constructor of this previous parent also , which is employee2 or super() method is used to access the methods of a super class in the derived class. 
+#         # super().__init__()   #used to make to run constructor of this previous parent also , which is employee2 or super() method is used to access the methods of a super class in the derived class. 
 #         print("constructor of child")
 # a= child()
 # print(a.company,a.post,a.salary)
@@ -424,11 +440,33 @@ n= 4
 # #class methods
 # class student:
 #     college= "BMS College of Engineering"
-#     @classmethod  # with this output will be "my name is basu kallapur studying in BMS College of Engineering." and without this the college name will be change do RVCE Bengaluru
+#     # @classmethod  # with this output will be "my name is basu kallapur studying in BMS College of Engineering." and without this the college name will be change do RVCE Bengaluru
 #     def show(cls):
 #         print(f"my name is basu kallapur studying in {cls.college}.")
 # a= student()
 # a.college= "RVCE Bengaluru"
+# a.college= "RVCE dfs"
+# a.show()
+
+
+# #Property decorators  #abstraction and incapsulation
+# class student:
+#     college= "BMS College of Engineering"
+#     @classmethod 
+#     def show(cls):
+#         print(f"my name is basu kallapur studying in {cls.college}.")
+#     @property
+#     def name(self):
+#         return f"{self.fname} {self.lname}"
+#     @name.setter
+#     def name(self,value):
+#         self.fname= value.split(" ")[0]
+#         self.lname= value.split(" ")[1]
+
+# a= student()
+# a.college= "RVCE Bengaluru"
+# a.name= "basu kallapur"  #after this we wan't our property to be set
+# print(a.name)
 # a.show()
 
 
@@ -436,89 +474,13 @@ n= 4
 
 
 
-# # #operator overloading
-# class Number:
-#     def __init__(self,n):
-#         self.n= n
-#     def __add__(self,num):
-#         return self.n + num.n
-# n= Number(1)
-# m= Number(2)
-# print(n+m)
-
-
-# # walrus operator
-# if (n := len([1, 2, 3, 4, 5])) > 3: 
-#     print(f"List is too long ({n} elements, expected <= 3)") 
-# # Output: List is too long (5 elements, expected <= 3) 
-
-# # types defination
-# # Variable type hint 
-# age: int = 25 
-
-# # Function type hints 
-# def greeting(name: str) -> str: 
-#     return f"Hello, {name}!" 
-# # Usage 
-# print(greeting("Alice"))  # Outpu t: Hello, Alice! 
-
-
-# # Advanced type hints
-# from typing import List,Tuple,Union,Dict
-# student: Dict[str,int]= {"Basavaraj C Kallapur", 2}
-# print(student)
-
-# # Match case
-# def http_status(status): 
-#     match status: 
-#         case 200: 
-#             return "OK" 
-#         case 404: 
-#             return "Not Found" 
-#         case 500:       
-#             return "Internal Server Error" 
-#         case _: 
-#             return "Unknown status" 
-# # Usage 
-# print(http_status(200))  # Output: OK 
-# print(http_status(404))  # Output: Not Found 
-# print(http_status(500))  # Output: Internal Server Error 
-# print(http_status(403))  # Output: Unknown status 
-
-# Excepti0n handling
-# try:
-#     a= int(input("whats your age:"))
-#     print(a)
-# except Exception as e:
-#     print(e)
-# print("thank you.")
-
-# # raise exception
-# a= int(input("enter num1: "))
-# b= int(input("enter num2: "))
-# if(b==0):
-#     raise ZeroDivisionError("You are not supposed devide any number by zero")
-# else:
-#     print(a/b)
-
-# # Try with else clause
-# try: 
-#     a= int(input("enter num1: "))
-# except Exception as e:
-#     print(e)
-# else: 
-#     print("this is inside else")
-# # This else is executed only if the try was successful 
-
-# Try with finally (usecase in function)
-def main():
-    try: 
-        a= int(input("enter num1: "))
-        return print(a)
-    except Exception as e:
-        print(e)
-        return print("exception block has run")
-    finally: 
-        print("this is inside finally")
-main()
+# #operator overloading
+class Number:
+    def __init__(self,n):
+        self.n= n
+    def __add__(self,num):
+        return self.n + num.n
+n= Number(1)
+m= Number(2)
+print(n+m)
 
