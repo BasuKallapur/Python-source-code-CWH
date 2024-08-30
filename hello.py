@@ -481,18 +481,7 @@
 # print(n+m)
 
 
-
-# # #operator overloading
-# class Number:
-#     def __init__(self,n):
-#         self.n= n
-#     def __add__(self,num):
-#         return self.n + num.n
-# n= Number(1)
-# m= Number(2)
-# print(n+m)
-
-
+# # ADVANCE PYTHON-1
 # # walrus operator
 # if (n := len([1, 2, 3, 4, 5])) > 3: 
 #     print(f"List is too long ({n} elements, expected <= 3)") 
@@ -556,15 +545,130 @@
 #     print("this is inside else")
 # # This else is executed only if the try was successful 
 
-# Try with finally (usecase in function)
-def main():
-    try: 
-        a= int(input("enter num1: "))
-        return print(a)
-    except Exception as e:
-        print(e)
-        return print("exception block has run")
-    finally: 
-        print("this is inside finally")
-main()
+# # Try with finally (usecase in function)
+# def main():
+#     try: 
+#         a= int(input("enter num1: "))
+#         return print(a)
+#     except Exception as e:
+#         print(e)
+#         return print("exception block has run")
+#     finally: 
+#         print("this is inside finally")
+# main()
+
+# #GLOBAL KEYWORD
+# #‘global’ keyword is used to modify the variable outside of the current scope.
+
+# # enumerate function
+# l= [1,2,3,4,5]
+# # index= 0 #conventional method
+# # for item in l:
+# #     print(f"the numbers at index {index} of the list are {item}")    
+# #     index+=1
+# for index,item in enumerate (l):  #easy method
+#     print(f"the numbers at index {index} of the list are {item}")    
+
+# # list comprehensions
+# myList= [1,2,3,4,5]
+# # squaredList= [] #conventional method
+# # for item in myList:
+# #     squaredList.append(item**2)
+# # print(squaredList)
+# squaredList= [i**2 for i in myList] #easy method
+# print(squaredList)
+
+# # chapter 12 practice set
+# # 1. 
+# try:
+#     with open("1.txt","r") as f:
+#         print(f.read())
+# except Exception as e:
+#     print(e)
+# try:
+#     with open("2.txt","r") as f:
+#         print(f.read())
+# except Exception as e:
+#     print(e)    
+# try:
+#     with open("3.txt","r") as f:
+#         print(f.read())
+# except Exception as e:
+#     print(e)
+# print("thank you.") #to show programme has not crashed
+
+# # 2.
+# l= [1,2,3,4,5,6,7,8,9]
+# ind=0
+# for ind,item in enumerate (l):
+#     if ind== 2 or ind==4 or ind==6:
+#         print(f"item at index {ind} of list is {item}")
+
+# # 3.
+# n= int(input("enter n: "))
+# table= [n*i for i in range (1,11)]
+# print(table)
+
+# # 4.
+# try:
+#     a= int(input("enter a: "))
+#     b= int(input("enter b: "))
+#     print(a/b)
+# except ZeroDivisionError as v:
+#     print("infinite")
+
+# # 5.
+# n= int(input("enter n: "))
+# table= [n*i for i in range (1,11)]
+# with open("tabels.txt","a") as f:
+#     f.write(f"the table of {n} is: {str(table)} \n")
+
+
+# # ADVANCE PYTHON-2
+# refer video and notes for venv related concepts
+
+# #lambda
+# square = lambda x:x*x 
+# a= square(6)  # returns 36 
+# print(a)
+# sum = lambda a,b,c:a+b+c 
+# b= sum(1,2,3)
+# print(b)
+
+# # join method
+# a= ["basu","c","kallapur"]
+# final= "_".join(a)
+# print(final)
+
+# # format (used in older version , now replaced by f string method)
+# a="{} is a good {}".format("basu","boy")  #by default the indexing is 0 and 1
+# print(a)
+# a="{1} is a good {0}".format("basu","boy")
+# print(a)
+
+# # map, filter and reduce
+# # 1. Map
+# l= [1,2,3,4,5]
+# square= lambda x: x*x
+# sqlist= map(square,l)
+# print(list(sqlist))
+
+# # 2. Filter
+# l= [0,1,2,3,4,5,6,7,8,9,10]
+# def even(n):
+#     if (n%2==0):
+#         return True
+#     else:
+#         False
+# onlyEven= filter(even,l)
+# print(list(onlyEven))
+
+# 3. Reduce
+from functools import reduce
+l= [1,2,3,4,5]
+def sum(a,b):
+    return a+b
+print(reduce(sum,l))
+
+
 
