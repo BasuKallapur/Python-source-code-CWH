@@ -470,17 +470,101 @@
 # a.show()
 
 
-# #Property decorators
+# # #operator overloading
+# class Number:
+#     def __init__(self,n):
+#         self.n= n
+#     def __add__(self,num):
+#         return self.n * num.n
+# n= Number(2)
+# m= Number(2)
+# print(n+m)
 
 
 
-# #operator overloading
-class Number:
-    def __init__(self,n):
-        self.n= n
-    def __add__(self,num):
-        return self.n + num.n
-n= Number(1)
-m= Number(2)
-print(n+m)
+# # #operator overloading
+# class Number:
+#     def __init__(self,n):
+#         self.n= n
+#     def __add__(self,num):
+#         return self.n + num.n
+# n= Number(1)
+# m= Number(2)
+# print(n+m)
+
+
+# # walrus operator
+# if (n := len([1, 2, 3, 4, 5])) > 3: 
+#     print(f"List is too long ({n} elements, expected <= 3)") 
+# # Output: List is too long (5 elements, expected <= 3) 
+
+# # types defination
+# # Variable type hint 
+# age: int = 25 
+
+# # Function type hints 
+# def greeting(name: str) -> str: 
+#     return f"Hello, {name}!" 
+# # Usage 
+# print(greeting("Alice"))  # Outpu t: Hello, Alice! 
+
+
+# # Advanced type hints
+# from typing import List,Tuple,Union,Dict
+# student: Dict[str,int]= {"Basavaraj C Kallapur", 2}
+# print(student)
+
+# # Match case
+# def http_status(status): 
+#     match status: 
+#         case 200: 
+#             return "OK" 
+#         case 404: 
+#             return "Not Found" 
+#         case 500:       
+#             return "Internal Server Error" 
+#         case _: 
+#             return "Unknown status" 
+# # Usage 
+# print(http_status(200))  # Output: OK 
+# print(http_status(404))  # Output: Not Found 
+# print(http_status(500))  # Output: Internal Server Error 
+# print(http_status(403))  # Output: Unknown status 
+
+# Excepti0n handling
+# try:
+#     a= int(input("whats your age:"))
+#     print(a)
+# except Exception as e:
+#     print(e)
+# print("thank you.")
+
+# # raise exception
+# a= int(input("enter num1: "))
+# b= int(input("enter num2: "))
+# if(b==0):
+#     raise ZeroDivisionError("You are not supposed devide any number by zero")
+# else:
+#     print(a/b)
+
+# # Try with else clause
+# try: 
+#     a= int(input("enter num1: "))
+# except Exception as e:
+#     print(e)
+# else: 
+#     print("this is inside else")
+# # This else is executed only if the try was successful 
+
+# Try with finally (usecase in function)
+def main():
+    try: 
+        a= int(input("enter num1: "))
+        return print(a)
+    except Exception as e:
+        print(e)
+        return print("exception block has run")
+    finally: 
+        print("this is inside finally")
+main()
 
